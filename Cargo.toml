@@ -1,0 +1,17 @@
+[package]
+name = "penguin-mux-wasm"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "1"
+futures-util = { version = "0.3", default-features = false }
+http = "0.2"
+parking_lot = "0.12"
+rand = "0.8"
+thiserror = "1"
+tokio = { version = ">=1.23.1", features = ["macros", "parking_lot", "rt", "sync", "time"] }
+tokio-tungstenite = { version = ">=0.20.1", default-features = false }
+tracing = "0.1"
