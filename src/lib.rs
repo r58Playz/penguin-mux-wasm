@@ -148,7 +148,7 @@ impl<S: WebSocketStream> Multiplexor<S> {
         if let Some(task_joinset) = task_joinset {
             task_joinset.spawn(task_future);
         } else {
-            tokio::spawn(async move {
+            wasm_bindgen_futures::spawn_local(async move {
                 if let Err(e) = task_future.await {
                     error!("Multiplexor task exited with error: {}", e);
                 }
